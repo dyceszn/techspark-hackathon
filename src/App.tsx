@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
-import { Cart, Checkout, Service } from "./pages";
+import { Cart, Checkout, Service, Home } from "./pages";
 // import { Login, SignUp } from "./pages";
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/service" element={<Service />} />
+      <Route path="/" element={<Home />} />
     </Routes>
   );
 }

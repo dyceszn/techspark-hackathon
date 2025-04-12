@@ -1,0 +1,10 @@
+export { default as BestSelling } from "./BestSelling";
+export { default as Footer } from "./Footer";
+export { default as Header } from "./Header";
+export { default as Hero } from "./Hero";
+// export {default as Navbar} from './Navbar';
+export { default as ProductGrid } from "./ProductGrid";
+export { default as Spotlight } from "./Spotlight";
+export { default as BookCreative } from "./BookCreative";
+export { default as Cart } from "./Cart";
+export { default as StudentBusinesses } from "./StudentBusinesses";
