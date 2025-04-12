@@ -1,16 +1,16 @@
+import { Route, Routes } from "react-router";
 import "./App.css";
-// import { Service } from "./pages";
-import { Cart } from "./pages";
-// import Checkout from "./pages/Checkout";
+import { Cart, Checkout, Service, Login, SignUp } from "./pages";
 
 function App() {
-  return (
-    <>
-      {/* <Checkout /> */}
-      <Cart />
-      {/* <Service /> */}
-    </>
-  );
+  return;
+  <Routes>
+    <Route path="/login" element={<Login />} />
+    <Route path="/signup" element={<SignUp />} />
+    <Route path="/cart" element={<Cart />} />
+    <Route path="/checkout" element={<Checkout />} />
+    <Route path="/service" element={<Service />} />
+  </Routes>;
 }
 
 export default App;
