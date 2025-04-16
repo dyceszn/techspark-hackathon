@@ -29,3 +29,6 @@ main {
 button:hover {
   cursor: pointer;
 }
+li {
+  font-weight: 600;
+}
