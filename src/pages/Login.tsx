@@ -100,3 +100,72 @@
 // }
 
 // export default Login;
+
+import React from "react";
+
+const Login = () => {
+  return (
+    <div>
+      <div className="flex w-full h-screen">
+        <aside className=" w-[40%] h-full bg-[var(--tertiary-color)]">
+          <img src={""} alt="" />
+        </aside>
+
+        <section className=" w-[60%] h-full flex items-center justify-center">
+          <form
+            className="  w-[50%] h-[40%] flex flex-col justify-between"
+            action=""
+          >
+            <p className=" text-center text-lg">Login</p>
+            <div className=" flex w-fit mx-auto">
+              <img
+                className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
+                src=""
+                alt=""
+              />
+              <img
+                className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
+                src=""
+                alt=""
+              />
+              <img
+                className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
+                src=""
+                alt=""
+              />
+            </div>
+
+            {/* Input bars */}
+
+            <div className=" w-full h-[37%] flex flex-col justify-between">
+              <input
+                className="bg-[var(--tertiary-color)] rounded-full w-full h-16 pl-10 font-black"
+                type="text"
+                placeholder="Enter your email address"
+              />
+              <input
+                className="bg-[var(--tertiary-color)] rounded-full w-full h-16 pl-10 font-black"
+                type="text"
+                placeholder="Enter your Password"
+              />
+            </div>
+
+            {/* Buttons and others */}
+
+            <div className=" w-full h-[25%] flex flex-col justify-between">
+              <button className=" w-full h-16 rounded-2xl bg-[var(--sec-color)] font-[Lexend] text-lg font-bold text-white">
+                Login
+              </button>
+              <p className="">
+                Don't have an account?{" "}
+                <span className="text-blue-500">Create one</span>
+              </p>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

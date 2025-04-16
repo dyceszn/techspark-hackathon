@@ -10,8 +10,8 @@
 //   AuthProvider,
 // } from "firebase/auth";
 // import { doc, setDoc } from "firebase/firestore";
-// import google from "../assets/google.svg"
-// import facebook from "../assets/facebook.svg"
+// import google from "../assets/google.svg";
+// import facebook from "../assets/facebook.svg";
 
 // const handleOAuthSignup = async (provider: AuthProvider) => {
 //   try {
@@ -44,7 +44,11 @@
 //   const handleEmailSignup = async (e: FormEvent) => {
 //     e.preventDefault();
 //     try {
-//       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+//       const userCredential = await createUserWithEmailAndPassword(
+//         auth,
+//         email,
+//         password
+//       );
 //       const user = userCredential.user;
 
 //       await updateProfile(user, { displayName: name });
@@ -94,47 +98,157 @@
 
 //         <form onSubmit={handleEmailSignup}>
 //           <div className="mb-4">
-//             <label htmlFor="name" className="block text-sm font-semibold font-medium mb-1">Full Name</label>
+//             <label
+//               htmlFor="name"
+//               className="block text-sm font-semibold font-medium mb-1"
+//             >
+//               Full Name
+//             </label>
 //             <input
 //               type="text"
 //               name="name"
 //               className="bg-white w-full px-3 py-2 border rounded-lg"
 //               value={name}
-//               onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+//               onChange={(e: ChangeEvent<HTMLInputElement>) =>
+//                 setName(e.target.value)
+//               }
 //               placeholder="Full Name"
 //             />
 //           </div>
 //           <div className="mb-4">
-//             <label htmlFor="email" className="block text-sm font-semibold font-medium mb-1">Email</label>
+//             <label
+//               htmlFor="email"
+//               className="block text-sm font-semibold font-medium mb-1"
+//             >
+//               Email
+//             </label>
 //             <input
 //               type="email"
 //               name="email"
 //               className="bg-white w-full px-3 py-2 border rounded-lg"
 //               value={email}
-//               onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+//               onChange={(e: ChangeEvent<HTMLInputElement>) =>
+//                 setEmail(e.target.value)
+//               }
 //               placeholder="Email"
 //             />
 //           </div>
 //           <div className="mb-6">
-//             <label className="block text-sm font-semibold font-medium mb-1" htmlFor="password">Password</label>
+//             <label
+//               className="block text-sm font-semibold font-medium mb-1"
+//               htmlFor="password"
+//             >
+//               Password
+//             </label>
 //             <input
 //               type="password"
 //               className="bg-white w-full py-2 px-3 border rounded-lg"
 //               name="password"
 //               value={password}
-//               onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+//               onChange={(e: ChangeEvent<HTMLInputElement>) =>
+//                 setPassword(e.target.value)
+//               }
 //               placeholder="Password"
 //             />
 //           </div>
 //           <button
 //             className="text-white w-full bg-blue-500 py-2 rounded-lg"
-//             type="submit">
+//             type="submit"
+//           >
 //             Login
 //           </button>
 //         </form>
 //       </div>
 //     </div>
-//   )
-// }
+//   );
+// };
 
 // export default SignUp;
+
+import React from "react";
+
+const SignUp = () => {
+  return (
+    <div className="flex w-full h-screen">
+      <aside className=" w-[40%] h-full bg-[var(--tertiary-color)]">
+        <img src={""} alt="" />
+      </aside>
+
+      <section className=" w-[60%] h-full flex items-center justify-center">
+        <form
+          className=" w-[50%] h-[70%] flex flex-col justify-between"
+          action=""
+        >
+          <p className=" text-center text-lg">Create Account</p>
+          <div className=" flex w-fit mx-auto">
+            <img
+              className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
+              src=""
+              alt=""
+            />
+            <img
+              className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
+              src=""
+              alt=""
+            />
+            <img
+              className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
+              src=""
+              alt=""
+            />
+          </div>
+
+          {/* Input bars */}
+
+          <div className=" w-full h-[60%] flex flex-col justify-between">
+            <input
+              className="bg-[var(--tertiary-color)] rounded-full w-full h-16 pl-10 font-black"
+              type="text"
+              placeholder="Enter your name"
+            />
+            <input
+              className="bg-[var(--tertiary-color)] rounded-full w-full h-16 pl-10 font-black"
+              type="text"
+              placeholder="Enter your email address"
+            />
+            <input
+              className="bg-[var(--tertiary-color)] rounded-full w-full h-16 pl-10 font-black"
+              type="text"
+              placeholder="Enter your Phone no"
+            />
+            <input
+              className="bg-[var(--tertiary-color)] rounded-full w-full h-16 pl-10 font-black"
+              type="text"
+              placeholder="Default Address: Room no, and  Hostel (not required)"
+            />
+            <input
+              className="bg-[var(--tertiary-color)] rounded-full w-full h-16 pl-10 font-black"
+              type="text"
+              placeholder="Enter your Password"
+            />
+          </div>
+
+          {/* Buttons and others */}
+
+          <div className=" w-full h-[20%] flex flex-col justify-between">
+            <div className=" flex items-center pl-2">
+              <input type="checkbox" name="seller account" id="seller" />{" "}
+              <label className="ml-3" htmlFor="seller">
+                Open a seller account
+              </label>
+            </div>
+            <button className=" w-full h-16 rounded-2xl bg-[var(--sec-color)] font-[Lexend] text-lg font-bold text-white">
+              Sign up
+            </button>
+            <p className="">
+              Already have an account?{" "}
+              <span className="text-blue-500">Login</span>
+            </p>
+          </div>
+        </form>
+      </section>
+    </div>
+  );
+};
+
+export default SignUp;

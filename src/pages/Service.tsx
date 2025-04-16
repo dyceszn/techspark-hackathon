@@ -1,6 +1,6 @@
 import React from "react";
-import { Back, Footer, Header } from "../components";
-import { back, cart, comment } from "../assets/icons";
+import { Back, Footer, Header, SingleComment } from "../components";
+import { back, cart } from "../assets/icons";
 
 const Service = () => {
   return (
@@ -106,15 +106,8 @@ const Service = () => {
               <p className="font-bold font-[Lexend]">33</p>
             </li>
           </ul>
-
-          <div className=" flex w-[70%]">
-            <p className="font-extralight text-md mt-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              eleifend non ipsum vitae egestas. Suspendisse potenti.
-              <br />
-              <span className="font-bold">{"- by Jude Samuel"}</span>
-            </p>
-            <img className="size-10" src={comment} alt="" />
+          <div className="w-[80%]">
+            <SingleComment />
           </div>
 
           <div className=" bg-[var(--tertiary-color)] w-[80%] h-[140px] flex flex-col justify-between p-4 rounded-2xl">
@@ -125,7 +118,7 @@ const Service = () => {
           </div>
 
           <div className=" flex items-end justify-end">
-            <button className="border-black border-3 size-16 rounded-full bg-[var(--tertiary-color)] mr-6 flex justify-center items-center">
+            <button className="border-black border-3 size-16 rounded-full mr-6 flex justify-center items-center">
               <img className="size-10" src={cart} alt="" />
             </button>
 
