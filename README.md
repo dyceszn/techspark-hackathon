@@ -2,6 +2,11 @@
 
 TIC TechSpark Cup - Project by G5
 
+## Design Mockups
+
+You can view the Figma designs and prototypes here:
+[Figma Link](https://www.figma.com/design/AKtYgpb1ICT66U4gnve1rT/TechSpark-Cup-Project-1.0?node-id=0-1&t=Tes4wGO5TX3yPX0f-1)
+
 ---
 
 ## Table of Contents
