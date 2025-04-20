@@ -39,40 +39,17 @@ const Service = () => {
 
           {/* --------------------------Image grid-------------------------- */}
 
-          <div className="border-black border-1 flex h-max w-full lg:w-[95%] justify-between items-center mb-10 lg:mb-0">
-            {/* <div className=" w-max h-max">
-              <img
-                src=""
-                alt=""
-                className="h-[327px] w-[284px] bg-[var(--tertiary-color)] rounded-xl"
-              />
-            </div>
-
-            <div className=" w-[51.5%] h-[327px] flex justify-between">
-              <div className=" flex flex-col justify-between">
-                <img
-                  src=""
-                  alt=""
-                  className="size-[152px] bg-[var(--tertiary-color)] rounded-xl"
-                />
-                <img
-                  src=""
-                  alt=""
-                  className="size-[152px] bg-[var(--tertiary-color)] rounded-xl"
-                />
-              </div>
-              <div className=" flex flex-col justify-between">
-                <img
-                  src=""
-                  alt=""
-                  className="size-[152px] bg-[var(--tertiary-color)] rounded-xl"
-                />
-                <img
-                  src=""
-                  alt=""
-                  className="size-[152px] bg-[var(--tertiary-color)] rounded-xl"
-                />
-              </div>
+          <div className="border-black border-1 h-max md:h-[327px] grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows- w-full lg:w-[95%] justify-between items-center mb-10 lg:mb-0">
+            {/* <div className="border-black border-1 bg-[var(--tertiary-color)] h-full w-[284px]"></div>
+            <div className="border-black border-1 h-full grid grid-cols-2 grid-rows-2 gap-4 w-fill">
+              {[...Array(4)].map((_, i) => (
+                <div
+                  key={i}
+                  className="w-full aspect-square bg-[var(--tertiary-color)] flex items-center justify-center"
+                >
+                  Item {i + 1}
+                </div>
+              ))}
             </div> */}
           </div>
 
