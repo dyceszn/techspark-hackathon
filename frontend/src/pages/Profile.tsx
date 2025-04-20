@@ -4,13 +4,13 @@ import { cart, edit } from "../assets/icons";
 
 const Profile = () => {
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="main w-full h-screen flex flex-col">
       <Header />
       <Back />
-      <div className=" flex-grow px-[10vw] flex justify-between">
+      <div className="border-black border-1 flex-grow px-[10vw] flex flex-col lg:flex-row lg:justify-between">
         {/* Profile Section */}
 
-        <section className=" w-[47%] h-full">
+        <section className="border-black border-1 w-[47%] h-full">
           <div className=" flex items-center justify-between h-[10%]">
             <p className="text-xl">Profile</p>
             <img className="size-8" src={edit} alt="" />
@@ -62,7 +62,7 @@ const Profile = () => {
 
         {/* Order History Section */}
 
-        <section className=" w-[47%] h-full">
+        <section className="border-black border-1 w-[47%] h-full">
           <div className=" flex items-center justify-between h-[10%]">
             <p className="text-xl">Order History</p>
             <div className="border-black border-2 rounded-full size-8 flex items-center justify-center">

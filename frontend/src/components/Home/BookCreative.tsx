@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { videography, programming, beauty, art } from "../../assets/photos";
+import Button from "../Button";
 
 const BookCreative: FC = () => {
   const services = [
@@ -34,11 +35,9 @@ const BookCreative: FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className=" my-32 md:mt-32 md:mb-58">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-900 mb-10">
-          Book a creative
-        </h2>
+        <h2 className="text-3xl font-bold mb-12 md:mb-20">Book a creative</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
@@ -57,9 +56,9 @@ const BookCreative: FC = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
                   <div className="flex items-center mb-3">
                     <i className={`${service.icon} text-2xl mr-3`}></i>
-                    <h3 className="text-xl font-semibold">{service.title}</h3>
+                    <h3 className=" text-xl font-semibold">{service.title}</h3>
                   </div>
-                  <p className="text-sm text-gray-200 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                  <p className="  ml-3 text-sm text-gray-200 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                     {service.description}
                   </p>
                 </div>
@@ -68,10 +67,8 @@ const BookCreative: FC = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <button className="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-colors duration-300">
-            View All Services
-          </button>
+        <div className="hidden lg:block mt-24 text-center">
+          <Button text="View All" />
         </div>
       </div>
     </section>

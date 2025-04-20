@@ -1,24 +1,28 @@
 import React from "react";
 import { CartItem, Footer, Header } from "../components";
-import { nav } from "../assets/icons";
+import { cart, nav } from "../assets/icons";
+import PriceActionButton from "../components/PriceActionButton";
 
 const Cart = () => {
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="single-page w-full h-screen flex flex-col">
       <Header />
       <div className=" flex-grow px-[10vw]">
-        <p className=" h-[20%] text-3xl font-semibold flex items-center">
+        {/* Page Title */}
+        <p className="h-[15%] text-3xl font-semibold flex items-center md:h-[20%]">
           Cart Summary
         </p>
 
-        {/* ------------------------------------------------- */}
-        <section className=" h-[50%]">
-          <div className=" h-[70%] flex justify-evenly items-center">
+        {/* ---------------------- Cart Items and Nav --------------------------- */}
+        <section className=" h-[35%]  flex flex-col justify-evenly md:block md:h-[50%]">
+          <div className="  gap-7 flex  items-center overflow-x-scroll md:h-[70%] lg:justify-evenly">
             {[...Array(5)].map((_, i) => (
               <CartItem key={i} />
             ))}
           </div>
-          <div className=" h-[30%] flex justify-between items-center px-16">
+          {/* Nav buttons */}
+
+          <div className="hidden h-[30%] justify-between items-center px-2 md:px-16 md:h-[30%] md:flex">
             <button>
               <img className="size-8" src={nav} alt="" />
             </button>
@@ -27,30 +31,18 @@ const Cart = () => {
             </button>
           </div>
         </section>
-        {/* -------------------------------------------------- */}
 
-        <div className=" flex flex-row h-[20%] justify-between">
+        {/* ------------------------ Cart Summary and Action Button -------------------------- */}
+
+        <div className=" flex flex-col  h-[35%]  justify-between md:flex-row md:h-[20%]">
           <div>
             <p className="my-6">No. of items: {""}</p>
             <p className="my-6">Est. Cost: {""}</p>
             <p className="my-6">Discount: {""}</p>
           </div>
 
-          <div className="  flex h-[95%] items-end">
-            <img
-              className=" size-16 rounded-full bg-[var(--tertiary-color)] mr-6"
-              src={""}
-              alt=""
-            />
-            <div className=" flex flex-col text-center">
-              <p className="font-semibold text-3xl  mb-2">
-                {"29,999"}{" "}
-                <span className="font-extralight text-sm">naira</span>
-              </p>
-              <button className="bg-[var(--sec-color)] text-white px-12 py-4 rounded-full text-2xl">
-                Checkout
-              </button>
-            </div>
+          <div className=" flex h-[50%]  items-end justify-end md:justify-normal md:h-[95%]">
+            <PriceActionButton icon={cart} text="Checkout" />
           </div>
         </div>
       </div>

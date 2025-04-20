@@ -29,6 +29,7 @@ function App() {
         <Route path="/confirmation" element={<Confirmation />} />
         <Route path="/product" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/loading" element={<Loading />} /> */}
         {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Routes>
     </Suspense>

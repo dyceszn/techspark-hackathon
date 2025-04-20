@@ -1,14 +1,14 @@
 import React from "react";
 
 interface ButtonProps {
-  prop: string; // prop that will be passed to the Button component
+  text: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ prop }) => {
+const Button: React.FC<ButtonProps> = ({ text }) => {
   return (
-    <div>
-      <p>{prop}</p>
-    </div>
+    <button className="bg-[var(--sec-color)] py-4 px-6 text-white text-md md:text-lg font-semibold rounded-full md:py-4 md:px-12">
+      {text}
+    </button>
   );
 };
 
