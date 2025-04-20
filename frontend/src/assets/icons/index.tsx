@@ -6,3 +6,6 @@ export { default as nav } from "./left.svg";
 export { default as cancel } from "./cancel.svg";
 export { default as cart } from "./cart.svg";
 export { default as comment } from "./chat-teardrop-dots.svg";
+export { default as loading } from "./loading.svg";
+export { default as discount } from "./discount.svg";
+export { default as best } from "./best-choice.svg";

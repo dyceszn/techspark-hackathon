@@ -8,3 +8,4 @@ export { default as yara } from "./yara.jpg";
 export { default as asian } from "./asian.jpg";
 export { default as videography } from "./videography.jpg";
 export { default as beauty } from "./beauty.jpg";
+export { default as hero } from "./Group 124.png";

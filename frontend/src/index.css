@@ -1,9 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 
 :root {
   --text-color: black;
   --primary-font: "Comfortaa", sans-serif;
   --sec-font: "Lexend", sans-serif;
+  --third-font: "Leckerli One", sans-serif;
+  --fourth-font: "New Rocker", sans-serif;
+  --fifth-font: "Rubik Gemstones", sans-serif;
+  --sixth-font: "Montserrat", sans-serif;
   --primary-color: white;
   --sec-color: black;
   --tertiary-color: #f0f4f8;
@@ -16,14 +24,11 @@ html {
 body {
   background-color: white;
   font-family: var(--primary-font);
-  height: 100vh;
+  /* height: 100vh; */
   /* overflow: hidden; */
   /* padding: 0 10vw; */
   color: var(--text-color);
   font-size: 0.8rem;
-}
-main {
-  height: 100vh;
 }
 
 button:hover {
@@ -31,4 +36,36 @@ button:hover {
 }
 li {
   font-weight: 600;
+}
+
+/* Media Queries for responsiveness */
+
+/* Mobile devices (portrait and up) */
+@media screen and (max-width: 600px) {
+  body {
+  }
+}
+
+/* Tablets (portrait and up) */
+@media screen and (max-width: 768px) {
+  body {
+  }
+}
+
+/* Small Laptops (landscape tablets, small laptops) */
+@media screen and (max-width: 1024px) {
+  body {
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .main {
+    overflow-y: auto; /* Allow scrolling when the content exceeds 800px */
+  }
+}
+@media screen and (max-height: 875px) {
+  .single-page {
+    height: 875px;
+    overflow: auto;
+  }
 }

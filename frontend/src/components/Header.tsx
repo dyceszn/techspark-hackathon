@@ -6,7 +6,7 @@ const Header = () => {
       <p className="font-bold">G5 Project</p>
 
       <nav>
-        <ul className="flex flex-row w-48 justify-between">
+        <ul className="flex flex-row w-28 md:w-48 justify-between">
           <li className="">Shop</li>
           <li className="">Sell</li>
         </ul>

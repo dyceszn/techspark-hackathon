@@ -6,5 +6,6 @@ export { default as Hero } from "./Hero";
 export { default as ProductGrid } from "./ProductGrid";
 export { default as Spotlight } from "./Spotlight";
 export { default as BookCreative } from "./BookCreative";
-export { default as Cart } from "./Cart";
 export { default as StudentBusinesses } from "./StudentBusinesses";
+export { default as BestSellingCard } from "./BestSellingCard";
+export { default as HomeTag } from "./HomeTag";
