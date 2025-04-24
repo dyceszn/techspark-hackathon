@@ -14,6 +14,10 @@ const Login = React.lazy(() => import("./pages/Login"));
 const SignUp = React.lazy(() => import("./pages/SignUp"));
 const Product = React.lazy(() => import("./pages/Product"));
 const Profile = React.lazy(() => import("./pages/Profile"));
+const Dashboard = React.lazy(() => import("./pages/Seller/Dashboard"));
+const Inventory = React.lazy(() => import("./pages/Seller/Inventory"));
+const Orders = React.lazy(() => import("./pages/Seller/Orders"));
+const Gigs = React.lazy(() => import("./pages/Seller/Gigs"));
 
 function App() {
   return (
@@ -29,7 +33,10 @@ function App() {
         <Route path="/confirmation" element={<Confirmation />} />
         <Route path="/product" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
-        {/* <Route path="/loading" element={<Loading />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/gigs" element={<Gigs />} />
         {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Routes>
     </Suspense>
