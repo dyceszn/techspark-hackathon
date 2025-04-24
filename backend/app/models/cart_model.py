@@ -11,7 +11,7 @@ class Cart_item(SQLModel,table=True):
     id:Optional[int] = Field(default=None,primary_key=True)
     product_id:int = Field(foreign_key="product.id")
 
-    amount_id:float
+    amount:float
     quantity:int
     
     cart_id:int = Field(foreign_key="cart.id")
