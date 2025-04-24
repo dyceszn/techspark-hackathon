@@ -16,7 +16,8 @@ def create_user(user_data: UserCreate, session=Depends(get_session)):
         fullname=user_data.fullname,
         email=user_data.email,
         password_hash=hashed_password,
-        role=user_data.role,
+        default_address=user_data.default_address,
+        is_seller=user_data.is_seller,
     )
     session.add(new_user)
     session.commit()
@@ -25,10 +26,11 @@ def create_user(user_data: UserCreate, session=Depends(get_session)):
     response_data = UserResponse(
         user_id=new_user.id,
         email=new_user.email,
-        role=user_data.role,
+        is_seller=user_data.is_seller,
         created_at=new_user.created_at
     )
-    if user_data.role == "customer":
+
+    if not user_data.is_seller:
         new_customer = Customer(
             user_id=new_user.id,
             phone_number=user_data.phone_number
@@ -65,4 +67,4 @@ def login_user(user_data: UserLogin, session=Depends(get_session)):
             detail="Invalid email or password"
         )
 
-    return TokenResponse(user_id=user.id, role=user.role)
+    return TokenResponse(user_id=user.id, is_seller=user.is_seller)

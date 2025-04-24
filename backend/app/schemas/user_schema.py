@@ -6,12 +6,13 @@ from typing import Optional
 class UserBase(BaseModel):
     fullname: str
     email: str
-    role: str
+    is_seller: bool
 
 
 class UserCreate(UserBase):
     password: str
     phone_number: str
+    default_address: str
     business_name: Optional[str] = None
     business_description: Optional[str] = None
 
@@ -24,7 +25,7 @@ class UserLogin(BaseModel):
 class UserResponse(BaseModel):
     user_id: int
     email: str
-    role: str
+    is_seller: bool
     customer_id: Optional[int] = None
     seller_id: Optional[int] = None
     created_at: datetime
