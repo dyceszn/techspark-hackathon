@@ -1,0 +1,50 @@
+# Logs
+logs/
+*.log
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# Environment variables
+*.env
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# macOS
+.DS_Store
+
+# Databases
+*.sqlite3
+*.db
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Migrations (optional — exclude if you regenerate frequently)
+migrations/
+
+# Compiled Jinja templates
+__jinja2_cache__/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
