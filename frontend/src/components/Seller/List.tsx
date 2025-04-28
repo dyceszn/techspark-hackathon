@@ -3,10 +3,17 @@ import ListItem from "./ListItem";
 
 interface ListProps {
   headers: string[];
-  data: string[];
+  data: Record<string, string>[];
+  onItemClick?: (id: string) => void;
+  itemType: "product" | "order" | "gig" | "transaction";
 }
 
-const List: React.FC<ListProps> = ({ headers, data }) => {
+const List: React.FC<ListProps> = ({
+  headers,
+  data,
+  onItemClick,
+  itemType,
+}) => {
   const colors: string[] = [
     "FF0000",
     "23FF75",
@@ -15,6 +22,12 @@ const List: React.FC<ListProps> = ({ headers, data }) => {
     "D9D9D9",
     "EA767E",
   ];
+
+  const handleClick = (itemID: string) => {
+    if (itemType !== "transaction") {
+      onItemClick?.(itemID);
+    }
+  };
 
   return (
     <div className="">
@@ -33,8 +46,15 @@ const List: React.FC<ListProps> = ({ headers, data }) => {
           </tr>
         </thead>
         <tbody>
-          {[...Array(9)].map((_, i) => (
-            <ListItem items={data} key={i} />
+          {data.map((item, index) => (
+            <ListItem
+              key={index}
+              items={item}
+              onClick={() =>
+                handleClick(item.ProductID || item.orderID || item.serviceID)
+              }
+              cursorType={itemType === "transaction" ? "default" : "pointer"}
+            />
           ))}
         </tbody>
       </table>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { signup } from "../api/Auth";
 import { Link } from "react-router-dom";
+import { singupImage } from "../assets/photos";
+import { apple, facebook, google } from "../assets/icons";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -33,8 +35,10 @@ const SignUp = () => {
   return (
     <div className="single-page flex flex-col w-full h-screen lg:flex-row">
       {/* Side Picture Section */}
-      <aside className="w-full h-[25%] bg-[var(--tertiary-color)] lg:w-[40%] lg:h-full">
-        <img src={""} alt="" />
+      <aside className="w-full h-[25%] bg-[var(--tertiary-color)] lg:w-[40%] lg:h-full relative">
+        <img src={singupImage} className="h-full w-full object-cover" alt="" />
+        {/* Black overlay with 30% opacity */}
+        <div className="absolute inset-0 bg-black opacity-30"></div>
       </aside>
 
       {/* Form Section */}
@@ -45,22 +49,10 @@ const SignUp = () => {
           onSubmit={handleSignup}
         >
           <p className=" text-center text-lg">Create Account</p>
-          <div className=" flex w-fit mx-auto">
-            <img
-              className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
-              src=""
-              alt=""
-            />
-            <img
-              className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
-              src=""
-              alt=""
-            />
-            <img
-              className=" size-8 rounded-full bg-[var(--tertiary-color)] mx-2 "
-              src=""
-              alt=""
-            />
+          <div className="border-black border- flex justify-center items-center w-fit mx-auto gap-5">
+            <img className=" size-6 rounded-full " src={facebook} alt="" />
+            <img className=" size-7 rounded-full " src={google} alt="" />
+            <img className=" size-6 rounded-full " src={apple} alt="" />
           </div>
 
           {/* Input bars */}
