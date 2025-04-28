@@ -2,7 +2,7 @@ import React from "react";
 
 interface StatusBoxProps {
   status: string;
-  statusValue: string;
+  statusValue: number | string;
 }
 
 const StatusBox: React.FC<StatusBoxProps> = ({ status, statusValue }) => {

@@ -16,3 +16,7 @@ export { default as wallet } from "./wallet.svg";
 export { default as inventory } from "./archive (1).svg";
 export { default as dashboard } from "./dashboard.svg";
 export { default as logout } from "./logout.svg";
+export { default as facebook } from "./logos_facebook.png";
+export { default as google } from "./flat-color-icons_google.png";
+export { default as apple } from "./apple.svg";
+export { default as camera } from "./camera.svg";
