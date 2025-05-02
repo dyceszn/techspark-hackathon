@@ -16,6 +16,14 @@ const Product = React.lazy(() => import("./pages/Product"));
 const Profile = React.lazy(() => import("./pages/Profile"));
 const Products = React.lazy(() => import("./pages/products"));
 
+const Dashboard = React.lazy(() => import("./pages/Seller/Dashboard"));
+const Inventory = React.lazy(() => import("./pages/Seller/Inventory"));
+const Orders = React.lazy(() => import("./pages/Seller/Orders"));
+const Gigs = React.lazy(() => import("./pages/Seller/Gigs"));
+const Wallet = React.lazy(() => import("./pages/Seller/Wallet"));
+const SellerProfile = React.lazy(() => import("./pages/Seller/Profile"));
+
+
 function App() {
   return (
     <Suspense fallback={<Loading />}>
@@ -31,7 +39,12 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/products" element={<Products />} />
         <Route path="/profile" element={<Profile />} />
-        {/* <Route path="/loading" element={<Loading />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/gigs" element={<Gigs />} />
+        <Route path="/wallet" element={<Wallet />} />
+        <Route path="/seller/profile" element={<SellerProfile />} />
         {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Routes>
     </Suspense>

@@ -31,6 +31,7 @@ body {
   /* padding: 0 10vw; */
   color: var(--text-color);
   font-size: 0.8rem;
+  overflow-x: hidden;
 }
 
 button:hover {
@@ -69,5 +70,26 @@ li {
   .single-page {
     height: 875px;
     overflow: auto;
+  }
+}
+
+/* For Pitching */
+
+.seller-page {
+  width: 100vw;
+  min-width: 1440px;
+  overflow-x: auto;
+}
+@media screen and (max-height: 900px) {
+  .seller-page {
+    height: 900px;
+    overflow: auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    min-width: 1024px;
+    overflow: scroll;
   }
 }

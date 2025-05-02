@@ -1,0 +1,5 @@
+fastapi[standard]
+passlib[bcrypt]
+sqlmodel
+psycopg[binary]
+pydantic_settings 
