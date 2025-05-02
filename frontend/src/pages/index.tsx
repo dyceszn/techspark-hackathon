@@ -11,3 +11,4 @@ export { default as Confirmation } from "./Confirmation";
 export { default as Loading } from "./Loading";
 export { default as Login } from "./Login";
 export { default as SignUp } from "./SignUp";
+export { default as Products} from "./products";

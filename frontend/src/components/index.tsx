@@ -6,3 +6,6 @@ export { default as Back } from "./Back";
 export { default as CartItem } from "./CartItem";
 export { default as MoreInfo } from "./MoreInfo";
 export { default as SingleComment } from "./SingleComment";
+export { default as ListingCard } from "./ListingCard"
+export { default as NameTag} from "./NameTag"
+export { default as Nav } from "./Nav"
