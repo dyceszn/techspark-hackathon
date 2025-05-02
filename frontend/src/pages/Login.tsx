@@ -1,20 +1,46 @@
 import React, { useState } from "react";
-import { login } from "../api/Auth";
-import { Link } from "react-router-dom";
+import axios from "axios";
+
+//import { login } from "../api/Auth";
+
+import { Link, useNavigate } from "react-router-dom";
 import { loginImage } from "../assets/photos";
 import { apple, facebook, google } from "../assets/icons";
+const API_BASE_URL = "http://localhost:8000";
+
+async function sigin(payload:
+  {
+    email:string,
+    password:string,
+  }
+){
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/users/login`,
+      payload,
+      { headers: { "Content-Type": "application/json" } }
+    );
+    return response.data;
+  } catch (err: any) {
+    throw new Error(err.response?.data?.detail || "Login failed");
+  }
+
+}
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const Navigate = useNavigate();
   // const [error, setError] = useState('');
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const data = await login({ email, password });
+      const data = await sigin({ email, password });
       console.log("Login successful:", data);
+      Navigate("/");
       // Will then redirect if truthy
     } catch (error) {
       console.error("Login failed:", error);

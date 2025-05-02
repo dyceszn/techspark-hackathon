@@ -59,3 +59,13 @@ def delete_cart(user_id: int, session=Depends(get_session)):
         raise HTTPException(status_code=404, detail="Cart not found")
     session.delete(cart); session.commit()
     return {"status": "Cart deleted successfully"}
+
+@router.get("/users/{user_id}/cart/id")
+def get_cart_id(user_id: int, session=Depends(get_session)):
+    # Try to find an existing cart
+    cart = session.exec(select(Cart).where(Cart.user_id == user_id)).first()
+    if not cart:
+        # Option A: return 404 if no cart exists
+        raise HTTPException(status_code=404, detail="Cart not found")
+
+    return {"cart_id": cart.id}
