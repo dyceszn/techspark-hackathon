@@ -93,17 +93,31 @@ const Inventory = () => {
             {/* TODO: Add filter options */}
             <select name="Filter" id="" onChange={handleFilter}>
               <option value="Filter">Filter</option>
-              <option value="Category">Low Stock</option>
-              <option value="Orders">Medium Stock</option>
-              <option value="Date Listed">High Stock</option>
+              <option value="Category" disabled>
+                Low Stock
+              </option>
+              <option value="Orders" disabled>
+                Medium Stock
+              </option>
+              <option value="Date Listed" disabled>
+                High Stock
+              </option>
             </select>
             {/* TODO: Add sort options */}
             <select name="Sort" id="" onChange={handleSort}>
               <option value="Sort">Sort</option>
-              <option value="Category">Most Recent</option>
-              <option value="Orders">Alphabetically</option>
-              <option value="Date Listed">Lowest to Highest</option>
-              <option value="Date Listed">Highest to Lowest</option>
+              <option value="Category" disabled>
+                Most Recent
+              </option>
+              <option value="Orders" disabled>
+                Alphabetically
+              </option>
+              <option value="Date Listed" disabled>
+                Lowest to Highest
+              </option>
+              <option value="Date Listed" disabled>
+                Highest to Lowest
+              </option>
             </select>
           </div>
         </div>

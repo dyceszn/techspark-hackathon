@@ -2,8 +2,12 @@ import React from "react";
 import { CartItem, Footer, Header } from "../components";
 import { cart, nav } from "../assets/icons";
 import PriceActionButton from "../components/PriceActionButton";
+import { useNavigate } from "react-router";
+import { buyer } from "../data/BuyerDummyData";
 
 const Cart = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="single-page w-full h-screen flex flex-col">
       <Header />
@@ -36,13 +40,20 @@ const Cart = () => {
 
         <div className=" flex flex-col  h-[35%]  justify-between md:flex-row md:h-[20%]">
           <div>
-            <p className="my-6">No. of items: {""}</p>
+            <p className="my-6">No. of items: {buyer.cart.length}</p>
             <p className="my-6">Est. Cost: {""}</p>
             <p className="my-6">Discount: {""}</p>
           </div>
 
           <div className=" flex h-[50%]  items-end justify-end md:justify-normal md:h-[95%]">
-            <PriceActionButton icon={cart} text="Checkout" />
+            <PriceActionButton
+              icon={cart}
+              text="Checkout"
+              price={29999}
+              onclick={() => {
+                navigate("/checkout");
+              }}
+            />
           </div>
         </div>
       </div>

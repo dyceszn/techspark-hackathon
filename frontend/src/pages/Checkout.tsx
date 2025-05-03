@@ -1,8 +1,12 @@
 import React from "react";
 import { Back, Button, Footer, Header } from "../components";
 import { edit } from "../assets/icons";
+import { useNavigate } from "react-router";
+import { buyer } from "../data/BuyerDummyData";
 
 const Checkout = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="single-page w-full h-screen flex flex-col">
       <Header />
@@ -21,16 +25,23 @@ const Checkout = () => {
           <div className=" w-[100%] md:w-[46%] lg:w-[40%]">
             <div className=" flex justify-between items-center">
               <p className="font-semibold text-lg">Profile data</p>
-              <button>
+              <button
+                onClick={() => {
+                  navigate("/profile");
+                }}
+              >
                 <img className="size-7" src={edit} alt="" />
               </button>
             </div>
             <div className=" md:h-[70%]">
-              <p className="my-6 md:my-8">Full Name: {""}</p>
-              <p className="my-6 md:my-8">Phone Number: {""}</p>
-              <p className="my-6 md:my-8">Email: {""}</p>
-              <p className="my-6 md:my-8">Profile type: {""}</p>
-              <p className="my-6 md:my-8">Gender: {""}</p>
+              <p className="my-6 md:my-8">Full Name: {buyer.profile.name}</p>
+              <p className="my-6 md:my-8">
+                Phone Number: {buyer.profile.phone}
+              </p>
+              <p className="my-6 md:my-8">Email: {buyer.profile.email}</p>
+              <p className="my-6 md:my-8">
+                Profile type: {buyer.profile.profileType}
+              </p>
             </div>
           </div>
 
@@ -39,14 +50,18 @@ const Checkout = () => {
           <div className=" mt-2 w-[100%] md:w-[46%]  md:mt-0 lg:w-[40%]">
             <div className=" flex items-center justify-between">
               <p className="font-semibold text-lg">Delivery Address</p>
-              <button>
+              <button
+                onClick={() => {
+                  navigate("/profile");
+                }}
+              >
                 <img className="size-7" src={edit} alt="" />
               </button>
             </div>
             <div className=" h-[70%]">
-              <p className="my-6 md:my-8">Address 1: {""}</p>
-              <p className="my-6 md:my-8">Address 2: {""}</p>
-              <p className="my-6 md:my-8">Hostel: {""}</p>
+              <p className="my-6 md:my-8">Address 1: {buyer.profile.address}</p>
+              <p className="my-6 md:my-8">Address 2: {"N/A"}</p>
+              <p className="my-6 md:my-8">Hostel: {"N/A"}</p>
               <p className=" md:my-8">School: Pan-Atlantic University</p>
             </div>
           </div>
@@ -63,7 +78,12 @@ const Checkout = () => {
           </div>
 
           <div className=" flex justify-center">
-            <Button text="Pay now" />
+            <Button
+              text="Pay now"
+              onClick={() => {
+                navigate("/alert");
+              }}
+            />
           </div>
         </div>
       </div>

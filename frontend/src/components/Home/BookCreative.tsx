@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { videography, programming, beauty, art } from "../../assets/photos";
 import Button from "../Button";
+import { useNavigate } from "react-router-dom";
 
 const BookCreative: FC = () => {
   const services = [
@@ -34,8 +35,10 @@ const BookCreative: FC = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
   return (
-    <section className=" my-32 md:mt-32 md:mb-58">
+    <section id="bookacreative" className="my-32 md:mt-32 md:mb-58">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 md:mb-20">Book a creative</h2>
 
@@ -66,9 +69,8 @@ const BookCreative: FC = () => {
             </div>
           ))}
         </div>
-
         <div className="hidden lg:block mt-24 text-center">
-          <Button text="View All" />
+          <Button text="View All" onClick={() => navigate("/services")} />
         </div>
       </div>
     </section>

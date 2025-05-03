@@ -1,14 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className=" flex flex-row justify-between items-center h-16 px-[10vw] bg-[var(--sec-color)] text-white">
-      <p className="font-bold">G5 Project</p>
+      <Link to="/">
+        <p className="font-bold">unimart</p>
+      </Link>
 
       <nav>
-        <ul className="flex flex-row w-28 md:w-48 justify-between">
-          <li className="">Shop</li>
-          <li className="">Sell</li>
+        <ul className="flex flex-row gap-32">
+          <Link to="/products">
+            <li className="">Shop</li>
+          </Link>
+          <Link to="/services">
+            <li className="">Hire</li>
+          </Link>
+          <Link to="/dashboard">
+            <li className="">Sell</li>
+          </Link>
         </ul>
       </nav>
     </div>

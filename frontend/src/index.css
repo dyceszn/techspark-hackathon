@@ -4,8 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 
-
-
 :root {
   --text-color: black;
   --primary-font: "Comfortaa", sans-serif;
@@ -63,7 +61,7 @@ li {
 
 @media screen and (max-height: 900px) {
   .main {
-    overflow-y: auto; /* Allow scrolling when the content exceeds 800px */
+    overflow-y: auto; /* Allow scrolling when the content exceeds 900px */
   }
 }
 @media screen and (max-height: 875px) {
@@ -91,5 +89,18 @@ li {
   body {
     min-width: 1024px;
     overflow: scroll;
+  }
+}
+
+.responsive-lock {
+  width: 100vw; /* Full width of the viewport */
+  min-width: 1440px; /* Locks the page to a minimum of 1440px wide */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+@media (max-width: 1440px) {
+  .responsive-lock {
+    width: 100%; /* Full width for screens smaller than 1440px */
+    min-width: unset; /* Remove the min-width for smaller screens */
   }
 }
