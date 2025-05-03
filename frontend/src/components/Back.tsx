@@ -1,11 +1,19 @@
+// src/components/Back.tsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { back } from "../assets/icons";
 
-const Back = () => {
+const Back: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // Go back one page in history
+  };
+
   return (
-    <div className=" h-28 flex items-center px-[10vw] md:h-36">
+    <button onClick={handleGoBack}className="ml-24 mt-5">
       <img src={back} alt="" />
-    </div>
+    </button>
   );
 };
 

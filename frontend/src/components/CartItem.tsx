@@ -8,7 +8,7 @@ const CartItem = () => {
       {/* Image and Tag */}
       <div className=" flex flex-col justify-between">
         <div className="bg-[var(--tertiary-color)] rounded-2xl flex flex-col justify-end items-end h-32 w-36 md:h-44 md:w-48 lg:h-52 lg:w-56 ">
-          <PriceTag />
+          <PriceTag price="2,999"/>
         </div>
 
         {/* Product name */}

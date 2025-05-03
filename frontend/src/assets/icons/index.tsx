@@ -20,3 +20,6 @@ export { default as facebook } from "./logos_facebook.png";
 export { default as google } from "./flat-color-icons_google.png";
 export { default as apple } from "./apple.svg";
 export { default as camera } from "./camera.svg";
+export { default as search } from "./search.png";
+export { default as cornrwos } from "./male-cornrows.webp";
+
