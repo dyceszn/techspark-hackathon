@@ -3,8 +3,13 @@ import { Back, Footer, Header, SingleComment } from "../components";
 import { back, cart } from "../assets/icons";
 import CategoryTag from "../components/CategoryTag";
 import PriceActionButton from "../components/PriceActionButton";
+import { services } from "../data/ServicesDummyData";
+import { nail1, nail2, nail3, nail4, nail5 } from "../assets/images";
+import { phio } from "../assets/photos";
 
 const Service = () => {
+  const service = services[0]; // TODO: Get the service from the API
+
   return (
     <div className="w-full flex flex-col lg:h-screen">
       <Header />
@@ -19,48 +24,72 @@ const Service = () => {
           {/* Heading, Seller, Tags */}
           <div className=" lg:h-[18%] flex flex-col gap-4 lg:gap-0 justify-between mb-10 lg:mb-0">
             <p className="text-lg lg:text-2xl font-[Lexend] font-semibold">
-              {"From basic to bold. Let's make your nails stand out."}
+              {service.serviceTitle}
             </p>
 
             <div className=" flex flex-row items-center ml-1">
               <img
-                src=""
+                src={phio}
                 alt=""
                 className="size-8 bg-[var(--tertiary-color)] rounded-full"
               />
-              <p className="pl-6">{"Shalom Jamime"}</p>
+              <p className="pl-6">{service.sellerInfo.sellerName}</p>
             </div>
 
             <div className="flex flex-row items-center">
-              <CategoryTag category="Beauty" />
-              <CategoryTag category="Art" />
+              <CategoryTag category={service.serviceCategory} />
             </div>
           </div>
 
           {/* --------------------------Image grid-------------------------- */}
 
-          <div className="border-black border-1 h-max md:h-[327px] grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows- w-full lg:w-[95%] justify-between items-center mb-10 lg:mb-0">
-            {/* <div className="border-black border-1 bg-[var(--tertiary-color)] h-full w-[284px]"></div>
-            <div className="border-black border-1 h-full grid grid-cols-2 grid-rows-2 gap-4 w-fill">
-              {[...Array(4)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-full aspect-square bg-[var(--tertiary-color)] flex items-center justify-center"
-                >
-                  Item {i + 1}
+          <div className=" h-max md:h-[327px]  w-full lg:w-[95%]  mb-10 lg:mb-0">
+            {/* -------Image Grid------- */}
+            <div className=" w-full h-full flex gap-4">
+              <div className="h-full w-[45%] bg-[var(--tertiary-color)] rounded-2xl">
+                <img
+                  className="w-full h-full object-cover rounded-2xl"
+                  src={nail1}
+                  alt=""
+                />
+              </div>
+              <div className=" h-full w-[55%] grid grid-cols-2 grid-rows-2 gap-4">
+                <div className="bg-[var(--tertiary-color)] rounded-2xl">
+                  <img
+                    className="w-full h-full object-cover rounded-2xl"
+                    src={nail2}
+                    alt=""
+                  />
                 </div>
-              ))}
-            </div> */}
+                <div className="bg-[var(--tertiary-color)] rounded-2xl">
+                  <img
+                    className="w-full h-full object-cover rounded-2xl"
+                    src={nail3}
+                    alt=""
+                  />
+                </div>
+                <div className="bg-[var(--tertiary-color)] rounded-2xl">
+                  <img
+                    className="w-full h-full object-cover rounded-2xl"
+                    src={nail4}
+                    alt=""
+                  />
+                </div>
+                <div className="bg-[var(--tertiary-color)] rounded-2xl">
+                  <img
+                    className="w-full h-full object-cover rounded-2xl"
+                    src={nail5}
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className=" h-[20%] mb-10 lg:mb-0">
             <p className="font-bold mb-4 lg:my-4 text-lg">Description</p>
             <p className=" wrap-normal w-full lg:w-[80%]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              eleifend non ipsum vitae egestas. Suspendisse potenti. Etiam
-              vestibulum sem quis massa rutrum, quis luctus odio condimentum...
-              More Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Morbi eleifend non ipsum vitae egestas.{" "}
+              {service.serviceDescription}
             </p>
           </div>
         </section>
@@ -71,24 +100,31 @@ const Service = () => {
           <ul className=" flex justify-between w-full mb-10 lg:mb-0 md:mb-18">
             <li className="text-center">
               <p className="mb-2">Price type</p>
-              <p className="font-bold font-[Lexend]">Fixed</p>
+              <p className="font-bold font-[Lexend]">{service.priceType}</p>
             </li>
             <li className="text-center">
               <p className="mb-2">Exp. Time frame</p>
-              <p className="font-bold font-[Lexend]">3 hrs</p>
+              <p className="font-bold font-[Lexend]">
+                {service.serviceDuration}
+              </p>
             </li>
             <li className="text-center">
               <p className="mb-2">Avail. hours</p>
-              <p className="font-bold font-[Lexend]">Sat</p>
+              <p className="font-bold font-[Lexend]">
+                {service.serviceSchedule}
+              </p>
             </li>
             <li className="text-center">
               <p className="mb-2">Comp. orders</p>
-              <p className="font-bold font-[Lexend]">33</p>
+              <p className="font-bold font-[Lexend]">{service.totalOrders}</p>
             </li>
           </ul>
 
           <div className=" w-[80%] mb-10 lg:mb-0 md:mb-18 ">
-            <SingleComment />
+            <SingleComment
+              reviewer={service.serviceReviews[0].reviewer}
+              review={service.serviceReviews[0].reviewText}
+            />
           </div>
 
           <div className=" bg-[var(--tertiary-color)] w-full md:w-[80%] lg:w-[80%] h-[140px] flex flex-col justify-between p-4 rounded-2xl mb-10 lg:mb-0  md:mb-18">
@@ -99,7 +135,11 @@ const Service = () => {
           </div>
 
           <div className=" flex items-end justify-end mb-16 lg:mb-0">
-            <PriceActionButton icon={cart} text="Add to cart" />
+            <PriceActionButton
+              icon={cart}
+              text="Add to cart"
+              price={service.servicePrice}
+            />
           </div>
         </div>
       </main>

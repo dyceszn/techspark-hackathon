@@ -98,17 +98,31 @@ const Orders = () => {
             {/* TODO: Add filter options */}
             <select name="Filter" id="" onChange={handleFilter}>
               <option value="Filter">Filter</option>
-              <option value="Category">Unfulfilled</option>
-              <option value="Orders">Pending</option>
-              <option value="Date Listed">Fulfilled</option>
+              <option value="Category" disabled>
+                Unfulfilled
+              </option>
+              <option value="Orders" disabled>
+                Pending
+              </option>
+              <option value="Date Listed" disabled>
+                Fulfilled
+              </option>
             </select>
             {/* TODO: Add sort options */}
             <select name="Sort" id="" onChange={handleSort}>
               <option value="Sort">Sort</option>
-              <option value="Category">Most Recent</option>
-              <option value="Orders">Alphabetically</option>
-              <option value="Date Listed">Lowest to Highest</option>
-              <option value="Date Listed">Highest to Lowest</option>
+              <option value="Category" disabled>
+                Most Recent
+              </option>
+              <option value="Orders" disabled>
+                Alphabetically
+              </option>
+              <option value="Date Listed" disabled>
+                Lowest to Highest
+              </option>
+              <option value="Date Listed" disabled>
+                Highest to Lowest
+              </option>
             </select>
           </div>
         </div>
@@ -224,10 +238,12 @@ const Orders = () => {
                 </p>
               </div>
               <div className=" flex justify-end gap-3">
-                <SellerButton
-                  text="Mark as Shipped"
-                  onClick={handleMarkAsShipped}
-                />
+                {seller.profile.sellerType === "Student Business" && (
+                  <SellerButton
+                    text="Mark as Shipped"
+                    onClick={handleMarkAsShipped}
+                  />
+                )}
                 <SellerButton
                   text="Mark as Fulfilled"
                   onClick={handleMarkAsFulfilled}

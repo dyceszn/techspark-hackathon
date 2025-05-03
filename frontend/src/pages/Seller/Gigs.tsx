@@ -90,18 +90,34 @@ const Gigs = () => {
             {/* TODO: Add filter options */}
             <select name="Filter" id="" onChange={handleFilter}>
               <option value="Filter">Filter</option>
-              <option value="Active">Active</option>
-              <option value="Discounted">Discounted</option>
-              <option value="Fixed">Fixed Price</option>
-              <option value="Negotiable">Negotiable Price</option>
+              <option value="Active" disabled>
+                Active
+              </option>
+              <option value="Discounted" disabled>
+                Discounted
+              </option>
+              <option value="Fixed" disabled>
+                Fixed Price
+              </option>
+              <option value="Negotiable" disabled>
+                Negotiable Price
+              </option>
             </select>
             {/* TODO: Add sort options */}
             <select name="Sort" id="" onChange={handleSort}>
               <option value="Sort">Sort</option>
-              <option value="Category">Most Recent</option>
-              <option value="Orders">Alphabetically</option>
-              <option value="Date Listed">Lowest to Highest</option>
-              <option value="Date Listed">Highest to Lowest</option>
+              <option value="Category" disabled>
+                Most Recent
+              </option>
+              <option value="Orders" disabled>
+                Alphabetically
+              </option>
+              <option value="Date Listed" disabled>
+                Lowest to Highest
+              </option>
+              <option value="Date Listed" disabled>
+                Highest to Lowest
+              </option>
             </select>
           </div>
         </div>

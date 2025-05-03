@@ -3,11 +3,15 @@ import React from "react";
 interface PriceActionButtonProps {
   icon: string;
   text: string;
+  price: number;
+  onclick?: () => void;
 }
 
 const PriceActionButton: React.FC<PriceActionButtonProps> = ({
   icon,
   text,
+  price,
+  onclick,
 }) => {
   return (
     <div className="flex items-end justify-end">
@@ -17,9 +21,12 @@ const PriceActionButton: React.FC<PriceActionButtonProps> = ({
 
       <div className=" flex flex-col text-center">
         <p className="font-semibold text-3xl mb-2">
-          {"29,999"} <span className="font-extralight text-sm">naira</span>
+          {price} <span className="font-extralight text-sm">naira</span>
         </p>
-        <button className="bg-[var(--sec-color)] text-white px-10 py-4 rounded-full text-xl">
+        <button
+          className="bg-[var(--sec-color)] text-white px-10 py-4 rounded-full text-xl"
+          onClick={onclick}
+        >
           {text}
         </button>
       </div>
