@@ -3,3 +3,4 @@ passlib[bcrypt]
 sqlmodel
 psycopg[binary]
 pydantic_settings 
+psycopg2

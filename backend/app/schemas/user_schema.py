@@ -33,4 +33,5 @@ class UserResponse(BaseModel):
 
 class TokenResponse(BaseModel):
     user_id: int
-    role: str
+    is_seller:bool
+    #role: str

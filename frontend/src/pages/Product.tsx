@@ -71,6 +71,7 @@ const Product = () => {
               </p>
               <button className="bg-[var(--sec-color)] text-white px-10 py-4 rounded-full text-2xl">
                 {"Add to cart"}
+                
               </button>
             </div>
           </div>

@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from app.schemas.user_schema import UserCreate, UserResponse, UserLogin, TokenResponse
+from app.models.cart_model import Cart
 from passlib.context import CryptContext
 from app.core.db import get_session
 from app.models.user_model import User, Customer, Seller
@@ -39,6 +40,14 @@ def create_user(user_data: UserCreate, session=Depends(get_session)):
         session.commit()
         session.refresh(new_customer)
         response_data.customer_id = new_customer.id
+
+
+        #Adding Cart.
+        new_cart = Cart(user_id=new_user.id) 
+        session.add(new_cart)
+        session.commit()
+        session.refresh(new_cart)
+        
     else:
         new_seller = Seller(
             user_id=new_user.id,
