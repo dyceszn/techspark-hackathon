@@ -15,10 +15,10 @@ import Nav from "../components/Home/Nav";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white overflow-scroll flex flex-col">
+    <div className="responsive-lock min-h-screen bg-white overflow-scroll flex flex-col">
       {/* <Header /> */}
       <Hero />
-      <section className="px-[5vw] md:px-[10vw]">
+      <section>
         <SerachBar />
         <Nav />
         <ProductGrid />

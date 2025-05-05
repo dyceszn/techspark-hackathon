@@ -5,6 +5,7 @@ import { back, cart } from "../assets/icons";
 import CategoryTag from "../components/CategoryTag";
 import PriceActionButton from "../components/PriceActionButton";
 import { services } from "../data/ServicesDummyData";
+
 import { phio } from "../assets/photos";
 
 const Service = () => {
@@ -21,6 +22,7 @@ const Service = () => {
 
   const { serviceImages } = service;
 
+
   return (
     <div className="w-full flex flex-col lg:h-screen bg-gray-100">
       <Header />
@@ -33,6 +35,7 @@ const Service = () => {
         {/* Section 1 */}
         <section className="w-full lg:w-[50%] flex flex-col justify-between h-[90%]">
           {/* Heading, Seller, Tags */}
+
           <div className="lg:h-[18%] flex flex-col gap-4 lg:gap-0 justify-between mb-10 lg:mb-0">
             <h1 className="text-lg lg:text-2xl font-[Lexend] font-semibold text-gray-800">
               {service.serviceTitle}
@@ -44,8 +47,10 @@ const Service = () => {
                 className="size-8 bg-[var(--tertiary-color)] rounded-full object-cover"
               />
               <p className="pl-3 text-gray-700">{service.sellerInfo.sellerName}</p>
+
             </div>
             <div className="flex flex-row items-center">
+
               <CategoryTag color= "[var(--tertiary-color)]" category={service.serviceCategory} />
             </div>
           </div>
@@ -86,6 +91,7 @@ const Service = () => {
           <div className="h-[20%] mb-10 lg:mb-0">
             <p className="font-bold mb-4 lg:my-4 text-lg text-gray-800">Description</p>
             <p className="wrap-normal w-full lg:w-[80%] text-gray-700 leading-relaxed">
+
               {service.serviceDescription}
             </p>
           </div>
@@ -95,6 +101,7 @@ const Service = () => {
         <div className="w-full lg:w-[30%] h-[80%] flex flex-col items-end justify-between">
           <ul className="flex justify-between w-full mb-10 lg:mb-0 md:mb-18 text-gray-700">
             <li className="text-center">
+
               <p className="mb-2 text-sm">Price type</p>
               <p className="font-bold font-[Lexend]">{service.priceType}</p>
             </li>
@@ -108,6 +115,7 @@ const Service = () => {
             </li>
             <li className="text-center">
               <p className="mb-2 text-sm">Comp. orders</p>
+
               <p className="font-bold font-[Lexend]">{service.totalOrders}</p>
             </li>
           </ul>
@@ -116,6 +124,7 @@ const Service = () => {
             <SingleComment
               reviewer={service.serviceReviews[0]?.reviewer}
               review={service.serviceReviews[0]?.reviewText}
+
             />
           </div>
 
@@ -125,6 +134,7 @@ const Service = () => {
           </div>
 
           <div className="flex items-end justify-end mb-16 lg:mb-0">
+
             <PriceActionButton
               icon={cart}
               text="Add to cart"

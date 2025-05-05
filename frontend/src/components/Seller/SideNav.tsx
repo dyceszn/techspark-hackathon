@@ -18,7 +18,7 @@ interface SideNavProps {
 const SideNav: React.FC<SideNavProps> = ({ SellerType }) => {
   return (
     <div className="bg-[var(--tertiary-color)] h-full w-[15%] flex flex-col px-8 py-4 items-center">
-      <p className="text-lg w-full ">G5 PROJECT</p>
+      <p className="text-lg w-full ">unimart</p>
       {/* ----------------- */}
       <div className=" w-[80%] flex flex-col gap-16 items-center mt-20 font-light">
         <p className="text-xs font-extralight w-full">Overview</p>

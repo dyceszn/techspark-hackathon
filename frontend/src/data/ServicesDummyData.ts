@@ -1,3 +1,4 @@
+
 import { nail1, nail2,nail5 } from "../assets/images";
 import { HairService1, HairService2} from "../assets/images"; // Assuming you have these imports
 import { cornrwos } from "../assets/icons";
@@ -9,9 +10,11 @@ export const services = [
     serviceTitle: "Nail Fix & Design",
     serviceDescription:
       "Professional nail fixing and design services for students and young professionals. Choose from a variety of colors, designs, and styles to fit your personality and occasion.",
+
     servicePrice: 3000, // price in Naira
     priceType: "Fixed",
     serviceImages: [nail1, nail2, nail5],
+
     serviceCategory: "Beauty & Wellness",
     totalOrders: 150,
     serviceReviews: [
@@ -39,6 +42,7 @@ export const services = [
     serviceDuration: "1.5 - 2 hours",
     serviceSchedule: "Weekends",
     sellerInfo: {
+
       sellerImage: yara,
       sellerID: 101,
       sellerName: "Teniola Ajala",
@@ -49,6 +53,7 @@ export const services = [
     },
     isStudentDiscountAvailable: true, // Special discount for students
   },
+
   {
     serviceID: "GIG234",
     serviceTitle: "Professional Hair Styling",
@@ -90,3 +95,4 @@ export const services = [
     },
     isStudentDiscountAvailable: false,
   },]
+
