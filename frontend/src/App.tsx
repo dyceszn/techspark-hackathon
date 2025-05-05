@@ -8,6 +8,7 @@ const Loading = React.lazy(() => import("./pages/Loading"));
 const Cart = React.lazy(() => import("./pages/Cart"));
 const Checkout = React.lazy(() => import("./pages/Checkout"));
 const Service = React.lazy(() => import("./pages/Service"));
+const Services = React.lazy(() => import("./pages/Services"));
 const Alert = React.lazy(() => import("./pages/Alert"));
 const Confirmation = React.lazy(() => import("./pages/Confirmation"));
 const Login = React.lazy(() => import("./pages/Login"));
@@ -32,11 +33,11 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/service" element={<Service />} />
+        <Route path="/service/:serviceID" element={<Service />} />
         <Route path="/" element={<Home />} />
         <Route path="/alert" element={<Alert />} />
         <Route path="/confirmation" element={<Confirmation />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/product/:productId" element={<Product />} />
         <Route path="/products" element={<Products />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -45,6 +46,7 @@ function App() {
         <Route path="/gigs" element={<Gigs />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/seller/profile" element={<SellerProfile />} />
+        <Route path="/services" element={<Services/>}/>
         {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Routes>
     </Suspense>

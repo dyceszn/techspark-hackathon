@@ -8,4 +8,8 @@ export { default as MoreInfo } from "./MoreInfo";
 export { default as SingleComment } from "./SingleComment";
 export { default as ListingCard } from "./ListingCard"
 export { default as NameTag} from "./NameTag"
+export { default as ProfessionalsCard} from "./ProfessionalsCard"
 export { default as Nav } from "./Nav"
+export { default as SmallServiceCard } from "./SmallServiceCard"
+export { default as BigServiceCard } from "./BigServiceCard"
+export { default as ServiceTag } from "./ServiceTag"

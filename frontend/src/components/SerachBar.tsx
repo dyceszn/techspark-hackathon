@@ -1,4 +1,5 @@
 import React from "react";
+import { phio } from "../assets/photos";
 
 const SerachBar = () => {
   return (
@@ -6,7 +7,7 @@ const SerachBar = () => {
       <div className="w-[85%] md:w-[45%] flex items-center justify-between">
         <img
           className="size-14 rounded-full bg-[var(--tertiary-color)] mr-2 md:mr-4"
-          src=""
+          src= {phio}
           alt=""
         />
         <form
